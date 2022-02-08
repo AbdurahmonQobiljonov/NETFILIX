@@ -21,12 +21,8 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-                type: 'asset/resource',
-            },
-            {
-                test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-                type: 'asset/inline',
+                test: /\.(jpe?g|png|gif|svg|eot|ttf|woff2?)$/i,
+                type: 'asset',
             },
             {
                 test: /\.(c|sa|sc)ss$/i,

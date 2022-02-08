@@ -13,7 +13,7 @@ const MainPage = () => {
     return (
         <Fragment>
             <Header/>
-            {/*<Slider/>*/}
+            <Slider/>
             {/*<div className='main-content'>*/}
             {/*    <Favorites/>*/}
             {/*    <UpcomingMovie/>*/}

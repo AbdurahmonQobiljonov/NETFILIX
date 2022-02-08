@@ -1,3 +1,9 @@
+import image from '../../assets/notify/thumb-1.jpg'
+import logo from '../../assets/logo.png'
+import thumb_2 from '../../assets/notify/thumb-2.jpg'
+import thumb_3 from '../../assets/notify/thumb-3.jpg'
+import user from '../../assets/user/user.png'
+
 const Header = () => {
     return (
         <header id="main-header">
@@ -16,8 +22,8 @@ const Header = () => {
                                         <span className="navbar-menu-icon navbar-menu-icon--bottom"></span>
                                     </div>
                                 </a>
-                                <a href="index.html" className="navbar-brand">
-                                    <img src="images/logo.png" className="img-fluid logo" alt=""/>
+                                <a href="#" className="navbar-brand">
+                                    <img src={logo} className="img-fluid logo" alt="logo"/>
                                 </a>
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                     <div className="menu-main-menu-container">
@@ -87,7 +93,7 @@ const Header = () => {
                                                             <div className="iq-card-body">
                                                                 <a href="#" className="iq-sub-card">
                                                                     <div className="media align-items-center">
-                                                                        <img src="images/notify/thumb-1.jpg" alt=""
+                                                                        <img src={image} alt=""
                                                                              className="img-fluid mr-3"/>
                                                                         <div className="media-body">
                                                                             <h6 className="mb-0">Captain Marvel</h6>
@@ -98,7 +104,7 @@ const Header = () => {
                                                                 </a>
                                                                 <a href="#" className="iq-sub-card">
                                                                     <div className="media align-items-center">
-                                                                        <img src="images/notify/thumb-2.jpg" alt=""
+                                                                        <img src={thumb_2} alt=""
                                                                              className="img-fluid mr-3"/>
                                                                         <div className="media-body">
                                                                             <h6 className="mb-0">
@@ -111,7 +117,7 @@ const Header = () => {
                                                                 </a>
                                                                 <a href="#" className="iq-sub-card">
                                                                     <div className="media align-items-center">
-                                                                        <img src="images/notify/thumb-3.jpg" alt=""
+                                                                        <img src={thumb_3} alt=""
                                                                              className="img-fluid mr-3"/>
                                                                         <div className="media-body">
                                                                             <h6 className="mb-0">Mulan</h6>
@@ -127,7 +133,7 @@ const Header = () => {
                                                 <li>
                                                     <a href="#"
                                                        className="iq-user-dropdown search-toggle d-flex align-items-center">
-                                                        <img src="images/user/user.png"
+                                                        <img src={user}
                                                              className="img-fluid user-m rounded-circle" alt=""/>
                                                     </a>
                                                     <div className="iq-sub-dropdown iq-user-dropdown">
@@ -208,7 +214,7 @@ const Header = () => {
                                                     <div className="iq-card-body">
                                                         <a href="#" className="iq-sub-card">
                                                             <div className="media align-items-center">
-                                                                <img src="images/notify/thumb-1.jpg" alt=""
+                                                                <img src={image} alt=""
                                                                      className="img-fluid mr-3"/>
                                                                 <div className="media-body">
                                                                     <h6 className="mb-0">Captain Marvel</h6>
@@ -218,7 +224,7 @@ const Header = () => {
                                                         </a>
                                                         <a href="#" className="iq-sub-card">
                                                             <div className="media align-items-center">
-                                                                <img src="images/notify/thumb-2.jpg" alt=""
+                                                                <img src={thumb_2} alt=""
                                                                      className="img-fluid mr-3"/>
                                                                 <div className="media-body">
                                                                     <h6 className="mb-0">
@@ -230,7 +236,7 @@ const Header = () => {
                                                         </a>
                                                         <a href="#" className="iq-sub-card">
                                                             <div className="media align-items-center">
-                                                                <img src="images/notify/thumb-3.jpg" alt=""
+                                                                <img src={thumb_3} alt=""
                                                                      className="img-fluid mr-3"/>
                                                                 <div className="media-body">
                                                                     <h6 className="mb-0">Mulan</h6>
@@ -246,8 +252,8 @@ const Header = () => {
                                         <li className="nav-item nav-icon">
                                             <a href="#"
                                                className="iq-user-dropdown search-toggle d-flex align-items-center p-0">
-                                                <img src="images/user/user.png"
-                                                     className="img-fluid user-m rounded-circle" alt=""/>
+                                                <img src={user}
+                                                     className="img-fluid user-m rounded-circle" alt="user"/>
                                             </a>
                                             <div className="iq-sub-dropdown iq-user-dropdown">
                                                 <div className="iq-card shadow-none m-0">
