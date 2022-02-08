@@ -50,6 +50,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '..', './public/index.html'),
         }),
+        new MiniCssExtractPlugin({
+            attributes: {
+                id: "target",
+                "data-target": "example",
+            },
+        }),
     ],
     stats: 'errors-only',
 }
