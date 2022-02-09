@@ -1,3 +1,5 @@
+import parealax from '../../assets/parallax/avatar.jpg';
+
 const Parallex = () => {
     return (
         <section id="parallex" className="parallax-window">
@@ -46,7 +48,7 @@ const Parallex = () => {
                     </div>
                     <div className="col-lg-8">
                         <div className="parallax-img">
-                            <a href="#"><img src="images/parallax/avatar.jpg" alt="" className="img-fluid w-100"/></a>
+                            <a href="#"><img src={parealax} alt="" className="img-fluid w-100"/></a>
                         </div>
                     </div>
                 </div>

@@ -51,7 +51,6 @@ const Trending = () => {
                                         </div>
                                     </a>
                                 </li>
-
                             </ul>
                             <ul id="trending-slider" className="list-inline p-0 m-0 d-flex align-items-center">
                                 <li>

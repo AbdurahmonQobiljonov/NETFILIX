@@ -1327,20 +1327,20 @@ li.slide-item{
 .favorites-slider .slick-arrow.slick-disabled{
     opacity: 0;
 }
-.slick-prev {
+.slick-arrow.slick-prev {
     font-size: 0;
-    width: 50px;
-    height: 200px;
+    /*width: 50px;*/
+    /*height: 200px;*/
     color: #fff;
     right: auto;
     left: 9px;
     z-index: 9;
     top: 50%;
 }
-.slick-next{
+.slick-arrow.slick-next{
     font-size: 0;
-    width: 50px;
-    height: 200px;
+    /*width: 50px;*/
+    /*height: 200px;*/
     left: auto;
     color: #fff;
     right: 6px;
@@ -1515,7 +1515,7 @@ h1 a, h2 a, h3 a , h4 a, h5 a, h6 a{
 }
 
 /* we will see about arrow afterwards  */
-#top-ten-slider-nav .slick-next::before, #top-ten-slider-nav .slick-prev::before, #top-ten-slider .slick-next::before , #top-ten-slider .slick-prev::before{
+#top-ten-slider-nav .slick-arrow.slick-prev::before, #top-ten-slider-nav .slick-arrow.slick-prev::before, #top-ten-slider .slick-arrow.slick-prev::before , #top-ten-slider .slick-arrow.slick-prev::before{
     display: none;
 }
 .slick-arrow{
@@ -1751,14 +1751,14 @@ li.slide-item .block-description .parallax-ratting span{
     z-index: 9;
     top: 90px;
 }
-#trending-slider-nav .slick-next, .trending-contens .slick-next{
+#trending-slider-nav .slick-arrow.slick-next, .trending-contens .slick-arrow.slick-next{
     left: auto;
     color: #fff;
     right: 11px;
     z-index: 9;
     top: 90px;
 }
-#trending-slider-nav .slick-prev::before, .trending-contens .slick-next::before, .trending-contens .slick-prev::before, .trending-contens .slick-next::before{
+#trending-slider-nav .slick-arrow.slick-prev::before, .trending-contens .slick-arrow.slick-next::before, .trending-contens .slick-arrow.slick-prev::before, .trending-contens .slick-arrow.slick-next::before{
     font-size: 0;
 }
 
