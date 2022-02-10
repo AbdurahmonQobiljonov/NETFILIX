@@ -1,5 +1,4 @@
 import {Fragment} from "react";
-import Header from "../components/header/Header";
 import Slider from "../components/main_slider/Slider";
 import Favorites from "../components/favorites/Favorites";
 import UpcomingMovie from "../components/upcoming_movie/UpcomingMovie";
@@ -11,10 +10,10 @@ const MainPage = () => {
         <Fragment>
             <Slider/>
             <div className='main-content'>
-                <Favorites/>
-                <UpcomingMovie/>
-                <Parallex/>
-                <TrendingSuggested/>
+                {/*<Favorites/>*/}
+                {/*<UpcomingMovie/>*/}
+                {/*<Parallex/>*/}
+                {/*<TrendingSuggested/>*/}
             </div>
         </Fragment>
     )

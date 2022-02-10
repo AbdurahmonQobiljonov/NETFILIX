@@ -8,7 +8,7 @@ module.exports = {
   devServer: {
     static: path.join(__dirname, "build"),
     historyApiFallback: true,
-    port: 4000,
+    port: 3000,
     open: true,
     hot: true
   },
