@@ -1,4 +1,31 @@
+import Slider from "react-slick";
+
+import logo from '../../assets/logo.png'
+import trending from '../../assets/trending/01.jpg';
+import trending2 from '../../assets/trending/02.jpg';
+import trending3 from '../../assets/trending/03.jpg';
+import trending4 from '../../assets/trending/04.jpg';
+import trending5 from '../../assets/trending/05.jpg';
+import trending6 from '../../assets/trending/06.jpg';
+
+import episodes from '../../assets/episodes/ce1.jpg';
+import trending_6 from '../../assets/trending/trending-label.png';
+import episodes_2 from '../../assets/episodes/ce2.jpg';
+import episodes_3 from '../../assets/episodes/ce3.jpg';
+import episodes_4 from '../../assets/episodes/ce4.jpg';
+import episodes_5 from '../../assets/episodes/ce5.jpg';
+
 const Trending = () => {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+    };
+
     return (
         <section id="iq-trending" className="s-margin">
             <div className="container-fluid">
@@ -9,54 +36,55 @@ const Trending = () => {
                         </div>
                         <div className="trending-contens">
                             <ul id="trending-slider-nav" className="list-inline p-0 mb-0 row align-items-center">
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <div className="movie-slick position-relative">
-                                            {/*<img src="images/trending/01.jpg" className="img-fluid" alt="">*/}
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <div className="movie-slick position-relative">
-                                            {/*<img src="images/trending/02.jpg" className="img-fluid" alt="">*/}
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <div className="movie-slick position-relative">
-                                            {/*<img src="images/trending/03.jpg" className="img-fluid" alt="">*/}
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <div className="movie-slick position-relative">
-                                            {/*<img src="images/trending/04.jpg" className="img-fluid" alt="">*/}
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <div className="movie-slick position-relative">
-                                            {/*<img src="images/trending/05.jpg" className="img-fluid" alt="">*/}
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <div className="movie-slick position-relative">
-                                            {/*<img src="images/trending/06.jpg" className="img-fluid" alt="">*/}
-                                        </div>
-                                    </a>
-                                </li>
+                                <Slider {...settings}>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div className="movie-slick position-relative">
+                                                <img src={trending} className="img-fluid" alt=""/>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div className="movie-slick position-relative">
+                                                <img src={trending2} className="img-fluid" alt=""/>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div className="movie-slick position-relative">
+                                                <img src={trending3} className="img-fluid" alt=""/>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div className="movie-slick position-relative">
+                                                <img src={trending4} className="img-fluid" alt=""/>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div className="movie-slick position-relative">
+                                                <img src={trending5} className="img-fluid" alt=""/>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div className="movie-slick position-relative">
+                                                <img src={trending6} className="img-fluid" alt=""/>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </Slider>
                             </ul>
                             <ul id="trending-slider" className="list-inline p-0 m-0 d-flex align-items-center">
                                 <li>
                                     <div className="tranding-block position-relative"
-                                         // style={{backgroundImage: 'url(images/trending/01.jpg)'}}
-                                    >
+                                         style={{backgroundImage: `url(${trending})`, width: '1703px'}}>
                                         <div className="trending-custom-tab">
                                             <div className="tab-title-info position-relative">
                                                 <ul className="trending-pills d-flex nav nav-pills justify-content-center align-items-center text-center"
@@ -95,8 +123,8 @@ const Trending = () => {
                                                         <a href="javascript:void(0);" tabIndex={0}>
                                                             <div className="res-logo">
                                                                 <div className="channel-logo">
-                                                                    {/*<img src="images/logo.png" className="c-logo"*/}
-                                                                    {/*     alt="">*/}
+                                                                    <img src={logo} className="c-logo"
+                                                                         alt="logo"/>
                                                                 </div>
                                                             </div>
                                                         </a>
@@ -109,9 +137,9 @@ const Trending = () => {
                                                             <span className="trending-year">2020</span>
                                                         </div>
                                                         <div className="d-flex align-items-center series mb-4">
-                                                            <a href="javascript:void(0);">
-                                                                {/*<img src="images/trending/trending-label.png"*/}
-                                                                {/*     className="img-fluid" alt="">*/}
+                                                            <a href="#">
+                                                                <img src={trending_6}
+                                                                     className="img-fluid" alt=""/>
                                                             </a>
                                                             <span className="text-gold ml-3">#2 in Series Today</span>
                                                         </div>
@@ -160,7 +188,7 @@ const Trending = () => {
                                                         className="trending-info align-items-center w-100 animated fadeInUp">
                                                         <a href="#" tabIndex={0}>
                                                             <div className="channel-logo">
-                                                                {/*<img src="images/logo.png" className="c-logo" alt="">*/}
+                                                                <img src={logo} className="c-logo" alt="logo"/>
                                                             </div>
                                                         </a>
                                                         <h1 className="trending-text big-title text-uppercase">the
@@ -190,8 +218,8 @@ const Trending = () => {
                                                                 <div className="e-item">
                                                                     <div className="block-image position-relative">
                                                                         <a href="#">
-                                                                            {/*<img src="images/episodes/ce1.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
+                                                                            <img src={episodes}
+                                                                                 className="img-fluid" alt=""/>
                                                                         </a>
                                                                         <div className="episode-play-info">
                                                                             <div className="episode-play">
@@ -215,8 +243,8 @@ const Trending = () => {
                                                                 <div className="e-item">
                                                                     <div className="block-image position-relative">
                                                                         <a href="#">
-                                                                            {/*<img src="images/episodes/ce2.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
+                                                                            <img src={episodes_2}
+                                                                                 className="img-fluid" alt=""/>
                                                                         </a>
                                                                         <div className="episode-play-info">
                                                                             <div className="episode-play">
@@ -240,8 +268,8 @@ const Trending = () => {
                                                                 <div className="e-item">
                                                                     <div className="block-image position-relative">
                                                                         <a href="#">
-                                                                            {/*<img src="images/episodes/ce3.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
+                                                                            <img src={episodes_3}
+                                                                                 className="img-fluid" alt=""/>
                                                                         </a>
                                                                         <div className="episode-play-info">
                                                                             <div className="episode-play">
@@ -265,8 +293,8 @@ const Trending = () => {
                                                                 <div className="e-item">
                                                                     <div className="block-image position-relative">
                                                                         <a href="#">
-                                                                            {/*<img src="images/episodes/ce4.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
+                                                                            <img src={episodes_4}
+                                                                                 className="img-fluid" alt=""/>
                                                                         </a>
                                                                         <div className="episode-play-info">
                                                                             <div className="episode-play">
@@ -290,8 +318,8 @@ const Trending = () => {
                                                                 <div className="e-item">
                                                                     <div className="block-image position-relative">
                                                                         <a href="#">
-                                                                            {/*<img src="images/episodes/ce5.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
+                                                                            <img src={episodes_5}
+                                                                                 className="img-fluid" alt=""/>
                                                                         </a>
                                                                         <div className="episode-play-info">
                                                                             <div className="episode-play">
@@ -319,292 +347,292 @@ const Trending = () => {
                                                     </div>
                                                 </div>
 
-                                                <div id="trending-data3" className="overlay-tab tab-pane fade">
-                                                    <div
-                                                        className="trending-info align-items-center w-100 animated fadeInUp">
-                                                        <a href="#" tabIndex={0}>
-                                                            <div className="channel-logo">
-                                                                {/*<img src="images/logo.png" className="c-logo" alt="">*/}
-                                                            </div>
-                                                        </a>
-                                                        <h1 className="trending-text big-title text-uppercase">the
-                                                            crown</h1>
-                                                        <div className="episodes-contens mt-4">
-                                                            <div
-                                                                className="owl-carousel owl-theme episodes-slider1 list-inline p-0 m-0">
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/ce1.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 1</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/ce2.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 2</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/ce3.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 3</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/ce4.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 4</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/ce5.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 5</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
+                                                {/*<div id="trending-data3" className="overlay-tab tab-pane fade">*/}
+                                                {/*    <div*/}
+                                                {/*        className="trending-info align-items-center w-100 animated fadeInUp">*/}
+                                                {/*        <a href="#" tabIndex={0}>*/}
+                                                {/*            <div className="channel-logo">*/}
+                                                {/*                /!*<img src="images/logo.png" className="c-logo" alt="">*!/*/}
+                                                {/*            </div>*/}
+                                                {/*        </a>*/}
+                                                {/*        <h1 className="trending-text big-title text-uppercase">the*/}
+                                                {/*            crown</h1>*/}
+                                                {/*        <div className="episodes-contens mt-4">*/}
+                                                {/*            <div*/}
+                                                {/*                className="owl-carousel owl-theme episodes-slider1 list-inline p-0 m-0">*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/ce1.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 1</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/ce2.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 2</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/ce3.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 3</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/ce4.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 4</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/ce5.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 5</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                {/*            </div>*/}
+                                                {/*        </div>*/}
+                                                {/*    </div>*/}
+                                                {/*</div>*/}
 
-                                                <div id="trending-data4" className="overlay-tab tab-pane fade">
-                                                    <div
-                                                        className="trending-info align-items-center w-100 animated fadeInUp">
-                                                        <a href="#" tabIndex={0}>
-                                                            <div className="channel-logo">
-                                                                {/*<img src="images/logo.png" className="c-logo" alt="">*/}
-                                                            </div>
-                                                        </a>
-                                                        <h1 className="trending-text big-title text-uppercase">the
-                                                            Crown</h1>
-                                                        <div className="episodes-contens mt-4">
-                                                            <div
-                                                                className="owl-carousel owl-theme episodes-slider1 list-inline p-0 m-0">
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/bbt3.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 1</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/fe2.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 2</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/m4.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 3</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/pb3.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 4</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="e-item">
-                                                                    <div className="block-image position-relative">
-                                                                        <a href="#">
-                                                                            {/*<img src="images/episodes/n5.jpg"*/}
-                                                                            {/*     className="img-fluid" alt="">*/}
-                                                                        </a>
-                                                                        <div className="episode-play-info">
-                                                                            <div className="episode-play">
-                                                                                <a href="#" tabIndex={0}>
-                                                                                    <i className="fa fa-play"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="episodes-description text-body">
-                                                                        <div
-                                                                            className="d-flex align-items-center justify-content-between">
-                                                                            <a href="#">Trailer 5</a>
-                                                                            <span className="text-primary">2.25m</span>
-                                                                        </div>
-                                                                        <p className="mb-0">Lorem ipsum dolor, sit amet
-                                                                            consectetur adipisicing elit. Cumque aliquam
-                                                                            quisquam iure tempore earum sequi.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                {/*<div id="trending-data4" className="overlay-tab tab-pane fade">*/}
+                                                {/*    <div*/}
+                                                {/*        className="trending-info align-items-center w-100 animated fadeInUp">*/}
+                                                {/*        <a href="#" tabIndex={0}>*/}
+                                                {/*            <div className="channel-logo">*/}
+                                                {/*                /!*<img src="images/logo.png" className="c-logo" alt="">*!/*/}
+                                                {/*            </div>*/}
+                                                {/*        </a>*/}
+                                                {/*        <h1 className="trending-text big-title text-uppercase">the*/}
+                                                {/*            Crown</h1>*/}
+                                                {/*        <div className="episodes-contens mt-4">*/}
+                                                {/*            <div*/}
+                                                {/*                className="owl-carousel owl-theme episodes-slider1 list-inline p-0 m-0">*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/bbt3.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 1</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/fe2.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 2</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/m4.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 3</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/pb3.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 4</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
+                                                {/*                <div className="e-item">*/}
+                                                {/*                    <div className="block-image position-relative">*/}
+                                                {/*                        <a href="#">*/}
+                                                {/*                            /!*<img src="images/episodes/n5.jpg"*!/*/}
+                                                {/*                            /!*     className="img-fluid" alt="">*!/*/}
+                                                {/*                        </a>*/}
+                                                {/*                        <div className="episode-play-info">*/}
+                                                {/*                            <div className="episode-play">*/}
+                                                {/*                                <a href="#" tabIndex={0}>*/}
+                                                {/*                                    <i className="fa fa-play"></i>*/}
+                                                {/*                                </a>*/}
+                                                {/*                            </div>*/}
+                                                {/*                        </div>*/}
+                                                {/*                    </div>*/}
+                                                {/*                    <div className="episodes-description text-body">*/}
+                                                {/*                        <div*/}
+                                                {/*                            className="d-flex align-items-center justify-content-between">*/}
+                                                {/*                            <a href="#">Trailer 5</a>*/}
+                                                {/*                            <span className="text-primary">2.25m</span>*/}
+                                                {/*                        </div>*/}
+                                                {/*                        <p className="mb-0">Lorem ipsum dolor, sit amet*/}
+                                                {/*                            consectetur adipisicing elit. Cumque aliquam*/}
+                                                {/*                            quisquam iure tempore earum sequi.</p>*/}
+                                                {/*                    </div>*/}
+                                                {/*                </div>*/}
+                                                {/*            </div>*/}
+                                                {/*        </div>*/}
+                                                {/*    </div>*/}
+                                                {/*</div>*/}
                                             </div>
                                         </div>
                                     </div>
