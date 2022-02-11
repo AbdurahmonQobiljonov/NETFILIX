@@ -1,4 +1,4 @@
-import parealax from '../../assets/parallax/avatar.jpg';
+import parealax from '../assets/parallax/avatar.jpg';
 
 const Parallex = () => {
     return (
