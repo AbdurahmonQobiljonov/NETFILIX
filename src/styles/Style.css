@@ -765,7 +765,7 @@ header#main-header.menu-sticky{
     padding: 130px 0 50px;
     width: 100%;
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-repeat: no-repeat;
     height: 100vh;
     position: relative;
