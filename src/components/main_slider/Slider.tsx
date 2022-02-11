@@ -41,14 +41,15 @@ const Slides = () => {
             <div id="home-slider" className="slider m-0 p-0">
                 <Slider {...settings}>
                     {movies?.map((element: IMovie) => {
+                        //destuctizatsiya
                         return (
-                            <div key={element.id} className="slide slick-bg"
-                                 style={{backgroundImage: `url(${element.poster_path})`, height: '100vh'}}>
+                            <div key={element.id} className="slide">
                                 <div className="container-fluid position-relative h-100">
                                     <div className="slider-inner h-100">
-                                        <div className="row align-items-center h--100">
+                                        <div className="row align-items-center slick-bg "
+                                             style={{backgroundImage: `url(${element.poster_path})`}}>
                                             <div className="col-xl-6 col-lg-12 col-md-12">
-                                                <a href="javascript:void(0)">
+                                                <a href="#">
                                                     <div className="channel-logo" data-animation-in="fadeInLeft"
                                                          data-delay-in="0.5">
                                                         <img src={logo} className="c-logo" alt="logo"/>
@@ -70,7 +71,7 @@ const Slides = () => {
                                                     <div className="d-flex align-items-center mt-2 mt-md-3">
                                                         <span className="badge badge-secondary p-2">   </span>
                                                         <span
-                                                            className="ml-3">{element.revenue.toLocaleString() + '$'}</span>
+                                                            className="ml-3">{element.revenue.toLocaleString() + ' $'}</span>
                                                     </div>
                                                 </div>
                                                 <p data-animation-in="fadeInUp">
