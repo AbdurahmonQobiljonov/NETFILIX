@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 import image from '../../assets/notify/thumb-1.jpg'
 import logo from '../../assets/logo.png'
 import thumb_2 from '../../assets/notify/thumb-2.jpg'
@@ -22,13 +24,13 @@ const Header = () => {
                                         <span className="navbar-menu-icon navbar-menu-icon--bottom"></span>
                                     </div>
                                 </a>
-                                <a href="#" className="navbar-brand">
+                                <Link to='/' className="navbar-brand">
                                     <img src={logo} className="img-fluid logo" alt="logo"/>
-                                </a>
+                                </Link>
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                     <div className="menu-main-menu-container">
                                         <ul id="top-menu" className="navbar-nav ml-auto">
-                                            <li className="menu-item"><a href="#">Home</a></li>
+                                            <li className="menu-item"><Link to='/' >Home</Link></li>
                                             <li className="menu-item"><a href="#">Movies</a></li>
                                             <li className="menu-item"><a href="#">Shows</a></li>
                                             <li className="menu-item">
@@ -59,136 +61,7 @@ const Header = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="mobile-more-menu">
-                                    <a href="#" className="more-toggle" id="dropdownMenuButton"
-                                       data-toggle="more-toggle"
-                                       aria-haspopup="true" aria-expanded="false">
-                                        <i className="fa fa-ellipsis-h"></i>
-                                    </a>
-                                    <div className="more-menu" aria-labelledby="dropdownMenuButton">
-                                        <div className="navbar-right position-relative">
-                                            <ul className="d-flex align-items-center justify-content-end list-inline m-0">
-                                                <li>
-                                                    <a href="#" className="search-toggle">
-                                                        <i className="fa fa-search"></i>
-                                                    </a>
-                                                    <div className="search-box iq-search-bar">
-                                                        <form action="#" className="searchbox">
-                                                            <div className="form-group position-relative">
-                                                                <input type="text"
-                                                                       className="text search-input font-size-12"
-                                                                       placeholder="type here to search..."/>
-                                                                <i className="search-link fa fa-search"></i>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </li>
-                                                <li className="nav-item nav-icon">
-                                                    <a href="#" className="search-toggle position-relative">
-                                                        <i className="fa fa-bell"></i>
-                                                        <span className="bg-danger dots"></span>
-                                                    </a>
-                                                    <div className="iq-sub-dropdown">
-                                                        <div className="iq-card shadow-none m-0">
-                                                            <div className="iq-card-body">
-                                                                <a href="#" className="iq-sub-card">
-                                                                    <div className="media align-items-center">
-                                                                        <img src={image} alt=""
-                                                                             className="img-fluid mr-3"/>
-                                                                        <div className="media-body">
-                                                                            <h6 className="mb-0">Captain Marvel</h6>
-                                                                            <small className="font-size-12">just
-                                                                                now</small>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a href="#" className="iq-sub-card">
-                                                                    <div className="media align-items-center">
-                                                                        <img src={thumb_2} alt=""
-                                                                             className="img-fluid mr-3"/>
-                                                                        <div className="media-body">
-                                                                            <h6 className="mb-0">
-                                                                                Dora and The Lost City of Gold
-                                                                            </h6>
-                                                                            <small className="font-size-12">25 mins
-                                                                                ago</small>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a href="#" className="iq-sub-card">
-                                                                    <div className="media align-items-center">
-                                                                        <img src={thumb_3} alt=""
-                                                                             className="img-fluid mr-3"/>
-                                                                        <div className="media-body">
-                                                                            <h6 className="mb-0">Mulan</h6>
-                                                                            <small className="font-size-12">1h 30 mins
-                                                                                ago</small>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                       className="iq-user-dropdown search-toggle d-flex align-items-center">
-                                                        <img src={user}
-                                                             className="img-fluid user-m rounded-circle" alt=""/>
-                                                    </a>
-                                                    <div className="iq-sub-dropdown iq-user-dropdown">
-                                                        <div className="iq-card shadow-none m-0">
-                                                            <div className="iq-card-body p-0 pl-3 pr-3">
-                                                                <a href="#" className="iq-sub-card setting-dropdown">
-                                                                    <div className="media align-items-center">
-                                                                        <div className="right-icon">
-                                                                            <i className="fa fa-user text-primary"></i>
-                                                                        </div>
-                                                                        <div className="media-body ml-3">
-                                                                            <h6 className="mb-0">Manage Profile</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a href="#" className="iq-sub-card setting-dropdown">
-                                                                    <div className="media align-items-center">
-                                                                        <div className="right-icon">
-                                                                            <i className="fa fa-cog text-primary"></i>
-                                                                        </div>
-                                                                        <div className="media-body ml-3">
-                                                                            <h6 className="mb-0">Settings</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a href="#" className="iq-sub-card setting-dropdown">
-                                                                    <div className="media align-items-center">
-                                                                        <div className="right-icon">
-                                                                            <i className="fa fa-inr text-primary"></i>
-                                                                        </div>
-                                                                        <div className="media-body ml-3">
-                                                                            <h6 className="mb-0">Pricing Plan</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a href="#" className="iq-sub-card setting-dropdown">
-                                                                    <div className="media align-items-center">
-                                                                        <div className="right-icon">
-                                                                            <i className="fa fa-sign-out text-primary"></i>
-                                                                        </div>
-                                                                        <div className="media-body ml-3">
-                                                                            <h6 className="mb-0">Logout</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
                             </nav>
-                            <div className="nav-overlay"></div>
                         </div>
                     </div>
                 </div>

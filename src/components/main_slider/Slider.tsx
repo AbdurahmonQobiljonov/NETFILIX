@@ -1,24 +1,28 @@
 import {useEffect, useState} from 'react';
 import Slider from "react-slick";
+import {useDispatch, useSelector} from "react-redux";
 import useNetflixService from "../../server/Server";
 
-import logo from '../../assets/logo.png';
 import {IMovie} from "../../interfaces/interfaces";
+import {setMovies} from "../../redux/actions/actions";
+import logo from '../../assets/logo.png';
+import {RootState} from "../../redux/store";
 
 const Slides = () => {
     const {error, loading, getAllMovies} = useNetflixService();
-    const [movies, setMovies] = useState<IMovie[]>([]);
+    const dispatch = useDispatch();
+    const {movies} = useSelector((state:RootState) => state.reducer);
 
     useEffect(() => {
         onRequest();
     }, []);
 
     const onRequest = () => {
-        getAllMovies('GET').then(res => {
-            setMovies(res);
+        getAllMovies('GET').then((res:IMovie[]) => {
+            // @ts-ignore
+            dispatch(setMovies(res));
         });
     };
-    console.log(movies);
 
     const settings = {
         dots: true,

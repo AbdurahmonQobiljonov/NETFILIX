@@ -10,8 +10,10 @@ const MainPage = () => {
             <Slider/>
             <div className='main-content'>
                 <Favorites/>
-                <UpcomingMovie/>
-                <TrendingSuggested/>
+                <Favorites/>
+                <Favorites/>
+                {/*<UpcomingMovie/>*/}
+                {/*<TrendingSuggested/>*/}
             </div>
         </Fragment>
     )

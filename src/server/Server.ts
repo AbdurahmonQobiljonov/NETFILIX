@@ -10,9 +10,8 @@ const useNetflixService = () => {
         return res.data;
     }
 
-    const getMovieById = async (id:number, method:string) => {
-        const res = await request(`${_apiBase}movies/${id}`, method);
-        return res.data.results;
+    const getMovieById = async (id:string, method:string) => {
+        return await request(`${_apiBase}movies${id}`, method);
     }
 
     return {loading, error, clearError, getAllMovies, getMovieById}

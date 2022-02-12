@@ -1,23 +1,28 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import Slider from "react-slick";
+import {useDispatch, useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
-import {IMovie} from "../../interfaces/interfaces";
+import {setMovies} from "../../redux/actions/actions";
 import useNetflixService from "../../server/Server";
+import {IMovie} from "../../interfaces/interfaces";
+import {RootState} from "../../redux/store";
 
 const Favorites = () => {
     const {error, loading, getAllMovies} = useNetflixService();
-    const [movies, setMovies] = useState<IMovie[]>([]);
-
+    const dispatch = useDispatch();
+    const {movies} = useSelector((state: RootState) => state.reducer);
     useEffect(() => {
         onRequest();
     }, []);
 
     const onRequest = () => {
         getAllMovies('GET').then(res => {
-            setMovies(res);
+            // @ts-ignore
+            dispatch(setMovies(res));
         });
     };
-    console.log(movies);
+
     const settings = {
         dots: false,
         infinite: true,
@@ -38,9 +43,10 @@ const Favorites = () => {
                         <div className="favorite-contens">
                             <ul className="favorites-slider list-inline row p-0 mb-0">
                                 <Slider {...settings}>
-                                    {movies?.map(({poster_path,title,vote_average}:IMovie) => {
-                                            return (<li className="slide-item">
-                                                    <div className="block-images position-relative">
+                                    {movies?.map(({poster_path, title, id, vote_average}: IMovie) => (
+                                            <li key={id} className="slide-item">
+                                                <div className="block-images position-relative">
+                                                    <Link to={`${id}`}>
                                                         <div className="img-box">
                                                             <img src={poster_path} className="img-fluid" alt=""/>
                                                         </div>
@@ -50,13 +56,14 @@ const Favorites = () => {
                                                             </h6>
                                                             <div className="movie-time d-flex align-items-center my-2">
                                                                 <div className="badge badge-secondary p-1 mr-2">16+</div>
-                                                                <span className="text-white">{vote_average + ' '}(imbd)</span>
+                                                                <span
+                                                                    className="text-white">{vote_average + ' '}(imbd)</span>
                                                             </div>
                                                             <div className="hover-buttons">
-                                                    <span className="btn btn-hover iq-button">
-                                                      <i className="fa fa-play mr-1"></i>
-                                                      Play Now
-                                                    </span>
+                                                                    <span className="btn btn-hover iq-button">
+                                                                      <i className="fa fa-play mr-1"></i>
+                                                                      Play Now
+                                                                    </span>
                                                             </div>
                                                         </div>
                                                         <div className="block-social-info">
@@ -83,10 +90,10 @@ const Favorites = () => {
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                    </div>
-                                                </li>
-                                            )
-                                        }
+                                                    </Link>
+                                                </div>
+                                            </li>
+                                        )
                                     )}
                                 </Slider>
                             </ul>
