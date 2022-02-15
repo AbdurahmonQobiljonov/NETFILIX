@@ -1,25 +1,26 @@
-import {IMovie,IMovies} from "../../interfaces/interfaces";
+import {createReducer} from '@reduxjs/toolkit'
+import {IMovies} from "../../interfaces/interfaces";
 
-const initialState:{movies:IMovie[];movie:IMovie|null} = {
- movies: [],
- movie: null
+import {setMovies, setMovie} from "../actions/actions";
+
+const initialState: IMovies = {
+    movies: [],
+    movie: null
 };
 
-const reducer = (state = initialState, action: any):IMovies => {
- switch (action.type) {
-  case 'SET_MOVIES':
-   return {
-    ...state,
-    movies: action.payload,
-   }
-  case 'SET_MOVIE':
-   return {
-    ...state,
-    movie: action.payload,
-   };
-  default:
-   return state;
- }
-};
+const reducer = createReducer(initialState, builder => {
+    builder
+        .addCase(setMovies, (state, action) => {
+            // @ts-ignore
+            state.movies = action.payload;
+        })
+        .addCase(setMovie, (state, action) => {
+            // @ts-ignore
+            state.movie = action.payload;
+        })
+        .addDefaultCase((state, action) => {
+            console.log(action.type);
+        });
+});
 
 export default reducer;
