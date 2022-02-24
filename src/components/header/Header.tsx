@@ -54,6 +54,7 @@ const Header = ():JSX.Element => {
                                                     </li>
                                                 </ul>
                                             </li>
+                                            <li className="menu-item"><a className='add'>ADD MOVIE</a></li>
                                         </ul>
                                     </div>
                                 </div>

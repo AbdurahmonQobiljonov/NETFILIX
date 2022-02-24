@@ -1190,6 +1190,9 @@ li.slide-item .block-images::before{
     opacity: 0;
 }
 
+.add {
+    cursor: pointer;
+}
 li.slide-item:hover .block-images::before{
     opacity: 1;
     z-index: 9;

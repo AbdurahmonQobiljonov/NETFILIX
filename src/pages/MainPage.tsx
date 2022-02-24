@@ -5,7 +5,7 @@ import UpcomingMovie from "../components/upcoming_movie/UpcomingMovie";
 import TrendingSuggested from "../components/trending_suggested/TrendingSuggested";
 import ErrorBoundary from "../components/errorboundary/ErrorBoundary";
 
-const MainPage = ():JSX.Element => {
+const MainPage = (): JSX.Element => {
     return (
         <Fragment>
             <ErrorBoundary>
@@ -16,13 +16,11 @@ const MainPage = ():JSX.Element => {
                     <Favorites/>
                 </ErrorBoundary>
                 <ErrorBoundary>
-                    <Favorites/>
+                    <UpcomingMovie/>
                 </ErrorBoundary>
                 <ErrorBoundary>
-                    <Favorites/>
+                    <TrendingSuggested/>
                 </ErrorBoundary>
-                {/*<UpcomingMovie/>*/}
-                {/*<TrendingSuggested/>*/}
             </div>
         </Fragment>
     )
