@@ -1,7 +1,7 @@
 import {createReducer} from '@reduxjs/toolkit'
-import {IMovies} from "../../interfaces/interfaces";
-
 import {setMovies, setMovie} from "../actions/actions";
+
+import {IMovies} from "../../interfaces/interfaces";
 
 const initialState: IMovies = {
     movies: [],

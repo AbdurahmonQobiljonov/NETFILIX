@@ -1,12 +1,8 @@
 import {Link} from "react-router-dom";
 
-import image from '../../assets/notify/thumb-1.jpg'
 import logo from '../../assets/logo.png'
-import thumb_2 from '../../assets/notify/thumb-2.jpg'
-import thumb_3 from '../../assets/notify/thumb-3.jpg'
-import user from '../../assets/user/user.png'
 
-const Header = () => {
+const Header = ():JSX.Element => {
     return (
         <header id="main-header">
             <div className="main-header">
@@ -31,8 +27,8 @@ const Header = () => {
                                     <div className="menu-main-menu-container">
                                         <ul id="top-menu" className="navbar-nav ml-auto">
                                             <li className="menu-item"><Link to='/' >Home</Link></li>
-                                            <li className="menu-item"><a href="#">Movies</a></li>
-                                            <li className="menu-item"><a href="#">Shows</a></li>
+                                            <li className="menu-item"><Link to='/movies'>Movies</Link></li>
+                                            <li className="menu-item"><Link to='/shows'>Shows</Link></li>
                                             <li className="menu-item">
                                                 <a href="#">Contact Us</a>
                                                 <ul className="sub-menu">

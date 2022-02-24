@@ -4,7 +4,7 @@ import Favorites from "../components/favorites/Favorites";
 import UpcomingMovie from "../components/upcoming_movie/UpcomingMovie";
 import TrendingSuggested from "../components/trending_suggested/TrendingSuggested";
 
-const MainPage = () => {
+const MainPage = ():JSX.Element => {
     return (
         <Fragment>
             <Slider/>

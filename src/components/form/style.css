@@ -1,0 +1,26 @@
+
+.movie__form {
+    color: #fff;
+    background-color: #232323;
+    margin-top: 100px;
+}
+
+.movie__form label {
+    color: #F65261;
+}
+
+.movie__form input {
+    background-color: #424242;
+    border: none;
+}
+.movie__form select {
+    background-color: #424242;
+    border: none;
+}
+
+.inp {
+    background-color: #424242;
+    border: none;
+    font: 1.2em 'Open Sans', sans-serif;
+    padding: 20px;
+}

@@ -1,4 +1,10 @@
+import {Link} from 'react-router-dom';
+
+import footer from '../../assets/footer/01.jpg';
+import footer1 from '../../assets/footer/02.jpg';
+
 const Footer = () => {
+
     return (
         <footer className="iq-bg-dark">
             <div className="footer-top">
@@ -8,10 +14,10 @@ const Footer = () => {
                             <div className="widget text-left">
                                 <div>
                                     <ul className="menu p-0">
-                                        <li><a href="#">Terms of Use</a></li>
-                                        <li><a href="#">Privacy-Policy</a></li>
-                                        <li><a href="#">FAQ</a></li>
-                                        <li><a href="#">Watch List</a></li>
+                                        <li><Link to='/'>Terms of Use</Link></li>
+                                        <li><Link to='/'>Privacy-Policy</Link></li>
+                                        <li><Link to='/'>FAQ</Link></li>1
+                                        <li><Link to='/'>Watch List</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -31,20 +37,17 @@ const Footer = () => {
                             <ul className="info-share">
                                 <li>
                                     <a href="#">
-                                        {/*<i>*/}
-                                        {/*<fa className="fa fa-facebook"></fa>*/}
+                                        <i className="fa fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        {/*<i>*/}
-                                        {/*<fa className="fa fa-youtube"></fa>*/}
+                                        <i className="fa fa-youtube"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        {/*<i>*/}
-                                        {/*<fa className="fa fa-instagram"></fa>*/}
+                                        <i className="fa fa-instagram"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -56,9 +59,9 @@ const Footer = () => {
                                         NetFlix App
                                     </h6>
                                     <div className="d-flex align-items-center">
-                                        {/*<a href="#"><img src="images/footer/01.jpg" alt=""></a>*/}
-                                        {/*<br>*/}
-                                        {/*    <a href="#" className="ml-3"><img src="images/footer/02.jpg" alt=""></a>*/}
+                                        <a href="#"><img src={footer} alt=""/></a>
+                                        <br/>
+                                        <a href="#" className="ml-3"><img src={footer1} alt=""/></a>
                                     </div>
                                 </div>
                             </div>

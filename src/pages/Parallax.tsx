@@ -9,7 +9,7 @@ import {RootState} from "../redux/store";
 import parealax from '../assets/parallax/avatar.jpg';
 import {IMovie} from "../interfaces/interfaces";
 
-const Parallex = () => {
+const Parallax = () => {
     const {error, loading, getMovieById} = useNetflixService();
     const {movie} = useSelector((state:RootState) => state.reducer);
     const dispatch = useDispatch();
@@ -81,4 +81,4 @@ const Parallex = () => {
     )
 }
 
-export default Parallex;
+export default Parallax;
