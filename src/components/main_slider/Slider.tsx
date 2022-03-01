@@ -4,14 +4,16 @@ import {useDispatch, useSelector} from "react-redux";
 import useNetflixService from "../../server/Server";
 
 import {IMovie} from "../../interfaces/interfaces";
-import {setMovies} from "../../redux/actions/actions";
+import {setActivePortal, setMovies} from "../../redux/actions/actions";
 import logo from '../../assets/logo.png';
 import {RootState} from "../../redux/store";
+import Form from "../form/Form";
+import Portal from "../portal/Portal";
 
 const Slides = () => {
     const {error, loading, getAllMovies} = useNetflixService();
     const dispatch = useDispatch();
-    const {movies} = useSelector((state:RootState) => state.reducer);
+    const {movies,activePortal} = useSelector((state:RootState) => state.reducer);
 
     useEffect(() => {
         onRequest();
@@ -33,15 +35,23 @@ const Slides = () => {
     };
 
     if (error) {
-        return <div>Error!</div>
+        return <div className='w-100 h-100 fs-6'>Error!</div>
     }
 
     if (loading) {
         return <div>Loading...</div>
     }
 
+    if (activePortal){
+        document.body.style.overflow = 'hidden';
+    }
+
     return (
         <section id="home" className="iq-main-slider p-0">
+            {activePortal && <Portal>
+                                <Form/>
+                             </Portal>
+            }
             <div id="home-slider" className="slider m-0 p-0">
                 <Slider {...settings}>
                     {movies?.map(({

@@ -15,4 +15,5 @@ export interface IMovie {
 export interface IMovies {
     movies: IMovie[];
     movie: IMovie|null;
+    activePortal:boolean;
 }

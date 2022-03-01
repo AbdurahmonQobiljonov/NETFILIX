@@ -1,8 +1,20 @@
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+
+import {setActivePortal} from "../../redux/actions/actions";
 
 import logo from '../../assets/logo.png'
+import React from "react";
 
 const Header = ():JSX.Element => {
+    const dispatch = useDispatch();
+
+    const openModal = (e: React.MouseEvent<HTMLSpanElement>):void => {
+        e.stopPropagation();
+        // @ts-ignore
+        dispatch(setActivePortal(true));
+    }
+
     return (
         <header id="main-header">
             <div className="main-header">
@@ -10,16 +22,6 @@ const Header = ():JSX.Element => {
                     <div className="row">
                         <div className="col-sm-12">
                             <nav className="navbar navbar-expand-lg navbar-light p-0">
-                                <a href="#" className="navbar-toggler c-toggler" data-toggle="collapse"
-                                   data-target="#navbarSupportedContent"
-                                   aria-controls="navbarSupportedContent" aria-expanded="false"
-                                   aria-label="Toggle navigation">
-                                    <div className="navbar-toggler-icon" data-toggle="collapse">
-                                        <span className="navbar-menu-icon navbar-menu-icon--top"></span>
-                                        <span className="navbar-menu-icon navbar-menu-icon--middle"></span>
-                                        <span className="navbar-menu-icon navbar-menu-icon--bottom"></span>
-                                    </div>
-                                </a>
                                 <Link to='/' className="navbar-brand">
                                     <img src={logo} className="img-fluid logo" alt="logo"/>
                                 </Link>
@@ -54,7 +56,10 @@ const Header = ():JSX.Element => {
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li className="menu-item"><a className='add'>ADD MOVIE</a></li>
+                                            <li  className="menu-item"
+                                                // @ts-ignore
+                                                 onClick={(e)=>openModal(e)}>
+                                                <a className='add'>ADD MOVIE</a></li>
                                         </ul>
                                     </div>
                                 </div>
