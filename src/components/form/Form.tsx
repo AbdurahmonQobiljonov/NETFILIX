@@ -5,6 +5,7 @@ import {setActivePortal} from "../../redux/actions/actions";
 import useNetflixService from "../../server/Server";
 
 import './style.css';
+import {log} from "util";
 
 type Inputs = {
     title: string;
@@ -19,9 +20,13 @@ type Inputs = {
 const Form = (): JSX.Element => {
     const ref = useRef<HTMLFormElement>(null);
     const dispatch = useDispatch();
-    const {postMovie} = useNetflixService();
+    const {postMovie, clearError} = useNetflixService();
     const {register, handleSubmit, formState: {errors}} = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = data => postMovie(data, 'POST');
+    const onSubmit: SubmitHandler<Inputs> = data => {
+        postMovie(data, 'POST')
+            .then(e => console.log(e));
+        clearError();
+    };
 
     const HandleOutsideClick = (e: any) => {
         document.body.style.overflow = 'auto';
