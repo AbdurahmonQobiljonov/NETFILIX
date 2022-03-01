@@ -1,14 +1,17 @@
-import {useEffect, useState} from 'react';
+import {useEffect, lazy} from 'react';
 import Slider from "react-slick";
 import {useDispatch, useSelector} from "react-redux";
+
 import useNetflixService from "../../server/Server";
+import Portal from "../portal/Portal";
+import {setMovies} from "../../redux/actions/actions";
 
 import {IMovie} from "../../interfaces/interfaces";
-import {setActivePortal, setMovies} from "../../redux/actions/actions";
-import logo from '../../assets/logo.png';
 import {RootState} from "../../redux/store";
-import Form from "../form/Form";
-import Portal from "../portal/Portal";
+
+import logo from '../../assets/logo.png';
+
+const Form = lazy(()=>import("../form/Form"));
 
 const Slides = () => {
     const {error, loading, getAllMovies} = useNetflixService();

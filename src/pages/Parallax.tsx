@@ -6,7 +6,6 @@ import useNetflixService from "../server/Server";
 import {RootState} from "../redux/store";
 
 
-import parealax from '../assets/parallax/avatar.jpg';
 import {IMovie} from "../interfaces/interfaces";
 
 const Parallax = () => {

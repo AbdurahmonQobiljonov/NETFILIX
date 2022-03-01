@@ -5,7 +5,7 @@ const useNetflixService = () => {
 
     const _apiBase: string = 'http://localhost:4000/';
 
-    const getAllMovies = async (method:string) => {
+    const getAllMovies = async (method: string) => {
         const res = await request(`${_apiBase}movies`, method);
         return res.data;
     }
@@ -14,7 +14,11 @@ const useNetflixService = () => {
         return await request(`${_apiBase}movies${id}`, method);
     }
 
-    return {loading, error, clearError, getAllMovies, getMovieById}
+    const postMovie = async (movie: any, method: string) => {
+        return await request(`${_apiBase}movies`, method, movie);
+    }
+
+    return {loading, error, clearError, getAllMovies, getMovieById, postMovie};
 };
 
 export default useNetflixService;
