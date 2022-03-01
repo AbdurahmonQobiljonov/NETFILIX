@@ -1,5 +1,9 @@
+import {useRef,useEffect} from "react";
+import {useDispatch} from "react-redux";
 import {useForm, SubmitHandler} from "react-hook-form";
+
 import './style.css';
+import {setActivePortal} from "../../redux/actions/actions";
 
 type Inputs = {
     title: string;
@@ -12,15 +16,38 @@ type Inputs = {
 };
 
 const Form = (): JSX.Element => {
+    const ref = useRef<HTMLFormElement>(null);
+    const dispatch = useDispatch();
     const {register, handleSubmit, watch, formState: {errors}} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
+
+    const closeModal = () => {
+        // @ts-ignore
+        dispatch(setActivePortal(false));
+    }
+
+    const HandleOutsideClick = (e:any) => {
+        document.body.style.overflow = 'auto';
+
+        if (!e.path.includes(ref.current)) {
+            // @ts-ignore
+            dispatch(setActivePortal(false));
+        }
+    };
+
+    useEffect(() => {
+        document.body.addEventListener('click', HandleOutsideClick);
+    }, []);
+
     return (
-        <div className='w-50 p-5 container border-0 movie__form'>
+    // @ts-ignore
+        <div ref={ref} className='w-50 p-5 container border-0 movie__form'>
             <form className='row g-3' onSubmit={handleSubmit(onSubmit)}>
                 <div className="d-flex justify-content-between w-100 align-items-center my-3">
                     <h1 className="d-block w-100 ml-3 font-weight-normal">ADD MOVIE</h1>
-                    <span className="mr-3 font-weight-bold fs-6">x</span>
+                    <span className="mr-3 font-weight-bold current-menu-parent Close"
+                        onClick={closeModal}>x</span>
                 </div>
                 <div className="col-md-8">
                     <label htmlFor="inputEmail4" className="form-label">TITLE</label>
@@ -59,7 +86,7 @@ const Form = (): JSX.Element => {
                 </div>
                 <div className="col-12">
                     <label htmlFor="textArea" className="form-label my-3 ">OVERVIEW</label>
-                    <textarea className="form-control inp h-100" id="textArea" defaultValue="Movie description" {...register("overview",{required:true,})}
+                    <textarea className="form-control h-100 inp" id="textArea" defaultValue="Movie description" {...register("overview",{required:true,})}
                               rows={3}></textarea>
                     {errors.overview && <span>This field is required</span>}
                 </div>
