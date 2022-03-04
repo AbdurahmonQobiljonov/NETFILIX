@@ -3,7 +3,7 @@ import {IMovie} from "../../interfaces/interfaces";
 import {Link} from "react-router-dom";
 
 
-const FavoritesView = ({movies,onDelete}:{movies:IMovie[];onDelete:(id:string)=>void}):JSX.Element => {
+const FavoritesView = ({movies,onDelete, mainTitle}:{movies:IMovie[];onDelete:(id:string)=>void,mainTitle:string}):JSX.Element => {
     const settings = {
         dots: false,
         infinite: true,
@@ -17,7 +17,7 @@ const FavoritesView = ({movies,onDelete}:{movies:IMovie[];onDelete:(id:string)=>
             <div className="row">
                 <div className="col-sm-12 overflow-hidden">
                     <div className="iq-main-header d-flex align-items-center justify-content-between">
-                        <h4 className="main-title">Top Picks For You</h4>
+                        <h4 className="main-title">{mainTitle}</h4>
                     </div>
                     <div className="favorite-contens">
                         <ul className="favorites-slider list-inline row p-0 mb-0">

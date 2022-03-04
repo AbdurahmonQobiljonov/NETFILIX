@@ -1,15 +1,15 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import FavoritesView from "./FavoritesView";
 import {RootState} from "../../redux/store";
-import Spinner from "../../components/spinner/Spinner";
+import MoviesView from "../movies_view/MoviesView";
 import useNetflixService from "../../server/Server";
 import {setMovies} from "../../redux/actions/actions";
-import ErrorMessage from "../errorMessage/ErrorMessage";
+import Spinner from "../../components/spinner/Spinner";
+import ErrorMessage from "../error_message/ErrorMessage";
 
 const Favorites = () => {
-    const {error, loading, getAllMovies, getMovieById} = useNetflixService();
+    const {error, loading, getMovieById,getAllMovies} = useNetflixService();
     const dispatch = useDispatch();
     const {movies} = useSelector((state: RootState) => state.reducer);
 
@@ -24,7 +24,7 @@ const Favorites = () => {
         });
     };
 
-    const onDelete = (id: string) => {
+    const DeleteMovies = (id: string) => {
         getMovieById(id, 'DELETE').then(res => {
             console.log(res)
         });
@@ -33,9 +33,10 @@ const Favorites = () => {
     const errorMessage = error ? <ErrorMessage/> : null;
     const spinner = loading ? <Spinner/> : null;
     const content = !(loading || error || !movies?.[0]?.title) ?
-        <FavoritesView
+        <MoviesView
             movies={movies}
-            onDelete={onDelete}/> : null;
+            mainTitle={'Top Picks For You'}
+            onDelete={DeleteMovies}/> : null;
 
     return (
         <section id="iq-favorites">
