@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import Spinner from "./components/spinner/Spinner";
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -17,7 +18,7 @@ const App = () => {
     return (
         <Router>
             <Header/>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spinner/>}>
                 <Routes>
                     <Route path="/" element={<MainPage/>}/>
                     <Route path="/:id" element={<Parallax/>}/>
