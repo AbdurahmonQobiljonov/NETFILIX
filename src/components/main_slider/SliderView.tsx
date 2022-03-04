@@ -1,7 +1,8 @@
 import Slider from "react-slick";
+import {Link} from "react-router-dom";
 import {IMovie} from "../../interfaces/interfaces";
-import logo from "../../assets/logo.png";
 
+import logo from "../../assets/logo.png";
 
 const SliderView = ({movies, }:{movies:IMovie[]}) =>{
     const settings = {
@@ -80,8 +81,8 @@ const SliderView = ({movies, }:{movies:IMovie[]}) =>{
                                                 <div className="d-flex align-items-center r-mb-23 mt-4"
                                                      data-animation-in="fadeInUp"
                                                      data-delay-in="1.2">
-                                                    <a href="#" className="btn btn-hover iq-button"><i
-                                                        className="fa-solid fa-circle-play"></i>Play Now</a>
+                                                    <Link to={`/${id}`} className="btn btn-hover iq-button"><i
+                                                        className="fa-solid fa-circle-play"></i>Play Now</Link>
                                                     <a href="#" className="btn btn-link">More Details</a>
                                                 </div>
                                             </div>
