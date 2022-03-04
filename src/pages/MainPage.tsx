@@ -3,7 +3,7 @@ import Slider from "../components/main_slider/Slider";
 import Favorites from "../components/favorites/Favorites";
 import UpcomingMovie from "../components/upcoming_movie/UpcomingMovie";
 import TrendingSuggested from "../components/trending_suggested/TrendingSuggested";
-import ErrorBoundary from "../components/errorboundary/ErrorBoundary";
+import ErrorBoundary from "../components/error_boundary/ErrorBoundary";
 
 const MainPage = (): JSX.Element => {
     return (

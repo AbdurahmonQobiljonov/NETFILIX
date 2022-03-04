@@ -6,7 +6,7 @@ import SliderView from "./SliderView";
 import Spinner from "../spinner/Spinner";
 import useNetflixService from "../../server/Server";
 import {setMovies} from "../../redux/actions/actions";
-import ErrorMessage from "../errorMessage/ErrorMessage";
+import ErrorMessage from "../error_message/ErrorMessage";
 
 import {IMovie} from "../../interfaces/interfaces";
 import {RootState} from "../../redux/store";

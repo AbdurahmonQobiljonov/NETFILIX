@@ -1,9 +1,10 @@
 import Slider from "react-slick";
 import {IMovie} from "../../interfaces/interfaces";
 import {Link} from "react-router-dom";
+import {MovieViewProps} from "./MovieViewProps";
 
 
-const FavoritesView = ({movies,onDelete, mainTitle}:{movies:IMovie[];onDelete:(id:string)=>void,mainTitle:string}):JSX.Element => {
+const MoviesView = ({movies,onDelete, mainTitle}:MovieViewProps):JSX.Element => {
     const settings = {
         dots: false,
         infinite: true,
@@ -68,4 +69,4 @@ const FavoritesView = ({movies,onDelete, mainTitle}:{movies:IMovie[];onDelete:(i
     );
 };
 
-export default FavoritesView;
+export default MoviesView;
