@@ -59,9 +59,9 @@ const Footer = () => {
                                         NetFlix App
                                     </h6>
                                     <div className="d-flex align-items-center">
-                                        <a href="#"><img src={footer} alt=""/></a>
+                                        <a href="https://play.google.com/store/apps/details?id=com.netflix.mediaclient"><img src={footer} alt=""/></a>
                                         <br/>
-                                        <a href="#" className="ml-3"><img src={footer1} alt=""/></a>
+                                        <a href="https://apps.apple.com/us/app/netflix/id363590051" className="mx-5"><img src={footer1} alt=""/></a>
                                     </div>
                                 </div>
                             </div>
