@@ -2,14 +2,32 @@
 .movie__form {
     color: #fff;
     background-color: #232323;
-    position: absolute;
-    z-index: 10;
-    top:10%;
-    right: 25%;
+    position: fixed;
+    z-index: 1000;
+    top:50%;
+    right: 50%;
+    transform: translate(50%, -50%);
 }
+
+.block__div {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
 .Close {
-    font-size: 30px;
+    font-size: 50px;
     cursor: pointer;
+}
+
+.movie__form h1 {
+color: #bf000a;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .movie__form label {
@@ -25,7 +43,7 @@
     border: none;
 }
 
-textarea {
+.movie__form textarea {
     background-color: #424242;
     border: none;
     font: 1.2em 'Open Sans', sans-serif;

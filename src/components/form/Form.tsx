@@ -28,23 +28,10 @@ const Form = (): JSX.Element => {
         clearError();
     };
 
-    const HandleOutsideClick = (e: any) => {
-        document.body.style.overflow = 'auto';
-
-        if (!e.path.includes(ref.current)) {
-            // @ts-ignore
-            dispatch(setActivePortal(false));
-        }
-    };
-
-    useEffect(() => {
-        document.body.addEventListener('click', HandleOutsideClick);
-    }, []);
-
     return (
         // @ts-ignore
-        <div ref={ref} className='w-50 p-5 container border-0 movie__form'>
-            <form className='row g-3' onSubmit={handleSubmit(onSubmit)}>
+        <div className='block__div'>
+            <form className='row g-3 p-5 movie__form' onSubmit={handleSubmit(onSubmit)}>
                 <div className="d-flex justify-content-between w-100 align-items-center my-3">
                     <h1 className="d-block w-100 ml-3 font-weight-normal">ADD MOVIE</h1>
                     <span className="mr-3 font-weight-bold current-menu-parent Close"
